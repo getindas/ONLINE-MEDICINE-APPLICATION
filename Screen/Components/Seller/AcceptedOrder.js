@@ -21,24 +21,20 @@ export default class Accepted extends React.Component {
 
 	componentDidMount() {
 		this.getData();
-		//console.log("Accepted")
+		console.log("Accepted")
 	}
 
 	componentDidUpdate() {
 
 		this.getData();
-		//console.log("Accepted Update")
+		console.log("Accepted Update")
 	  
 	}
 
 	
 
-
-
-	getData() {
-
-
-		fetch('http://localhost:4000/admin/orders/accepted',{
+	async getData() {
+		await fetch('http://localhost:4000/admin/orders/accepted',{
 			method: 'GET',
       headers: {
           'Authorization':'Bearer '+global.adminToken,
@@ -48,7 +44,7 @@ export default class Accepted extends React.Component {
 		})
 			.then(response => response.json())
 			.then(responseJson => {
-				//console.log("Accepted"+responseJson.message)
+				console.log("Accepted"+responseJson.message)
 				if(responseJson.status=='success'){
 					this.setState(
 						{

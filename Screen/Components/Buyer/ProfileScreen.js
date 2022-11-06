@@ -108,7 +108,7 @@ export default class ProfileScreen extends Component {
         <View style={styles.header}>
           <View style={styles.headerContent}>
             <Image style={styles.avatar}
-              source={{ uri: 'https://bootdey.com/img/Content/avatar/avatar7.png' }} />
+              source={{ uri: 'https://bootdey.com/img/Content/avatar/avatar1.png' }} />
 
             <Text style={styles.name}>{name}</Text>
             <Text style={styles.userInfo}>{mail}</Text>

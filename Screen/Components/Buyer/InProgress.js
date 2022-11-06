@@ -94,7 +94,7 @@ console.log("Token::" + global.token);
 
 				if(responseJson.status=='success'){
 					//console.log("Pending" + responseJson)
-				alert("OrderNo."+responseJson.message.orderNo+"\n"+"Address:"+responseJson.message.address+"\n"+"Total: "+responseJson.message.subTotal+"tk"+"\n"+"Date:"+responseJson.message.dateTime)
+				alert("OrderNo."+responseJson.message.orderNo+"\n"+"Address:"+responseJson.message.address+"\n"+"Total: "+responseJson.message.subTotal+"rs."+"\n"+"Date:"+responseJson.message.dateTime)
 			}else if(responseJson.status=='error'){
 				console.log(responseJson.message)
 			}

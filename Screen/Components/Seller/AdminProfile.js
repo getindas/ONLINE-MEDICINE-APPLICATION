@@ -94,7 +94,7 @@ export default class ProfileScreen extends Component {
         <View style={styles.header}>
           <View style={styles.headerContent}>
             <Image style={styles.avatar}
-              source={{ uri: 'https://bootdey.com/img/Content/avatar/avatar7.png' }} />
+              source={{ uri: 'https://bootdey.com/img/Content/avatar/avatar1.png' }} />
           </View>
         </View>
 
@@ -118,20 +118,19 @@ export default class ProfileScreen extends Component {
           </View>
 
           
-            <View style={{flexDirection: 'row',marginTop: "15%"}}>
+            <View style={{flexDirection: 'row',marginTop: "10%"}}>
               <TouchableOpacity
                 style={styles.buttonStyle}
                 activeOpacity={0.5}
                 onPress={this.signout}
               >
-
                 <Text style={styles.buttonTextStyle}>Sign Out</Text>
               </TouchableOpacity>
             </View>
 
 
-            <View style={{alignItems:'center',marginTop:24,backgroundColor:'#2B2D2F',height:40,borderRadius:50}}>
-            <Text onPress={() => this.props.navigation.navigate('AddAdmin')} style={{ marginTop:5,marginLeft:20,color:'white', fontWeight: 'bold',fontSize:20 }}>Create new ADMIN</Text>
+            <View style={{alignItems:'center',marginTop:24,backgroundColor:'#2B2D2F',height:30,borderRadius:50, marginBottom:10}}>
+            <Text onPress={() => this.props.navigation.navigate('AddAdmin')} style={{ marginBottom:5,marginLeft:20,color:'white', fontWeight: 'bold',fontSize:20 }}>Create new ADMIN</Text>
             </View>
         
               
