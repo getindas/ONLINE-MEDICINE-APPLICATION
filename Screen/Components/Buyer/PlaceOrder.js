@@ -202,7 +202,7 @@ export default class Cart extends React.Component {
 
             //this.props.navigation.navigate('Orders', { data: this.subtotalPrice().toFixed(2) })
 
-            // alert(this.subtotalPrice().toFixed(2));
+             alert("Total amount: " + this.subtotalPrice().toFixed(2));
 
         }
 
