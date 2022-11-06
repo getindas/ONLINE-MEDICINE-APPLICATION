@@ -19,7 +19,7 @@ import {
 } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
 import Loader from './loader';
-import BottomNav from './Components/BuyerScreens/BuyerNav'
+import BottomNav from './Components/Buyer/BuyerNav'
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import { RadioButton } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -150,15 +150,7 @@ const LoginScreen = props => {
         <View style={{ marginTop: 90 }}>
           <KeyboardAvoidingView enabled>
             <View style={{ alignItems: 'center' }}>
-              {/* <Image
-                source={require('../Image/aboutreact.png')}
-                style={{
-                  width: '80%',
-                  height: 100,
-                  resizeMode: 'contain',
-                  margin: 30,
-                }}
-              /> */}
+              
             </View>
             <View style={styles.SectionStyle}>
               <TextInput
@@ -224,12 +216,12 @@ const LoginScreen = props => {
             <Text
               style={styles.registerTextStyle}
               onPress={() => props.navigation.navigate('BuyerRegistration')}>
-              <Text style={{ fontStyle: 'italic', fontWeight: 'normal' }}>Don't have any account?</Text>  Register
+              <Text style={{ fontStyle: 'italic', fontWeight: 'normal' }}>Don't have user account?</Text>  Register User
             </Text>
             <Text
               style={styles.registerTextStyle}
               onPress={() => props.navigation.navigate('SellerRegistration')}>
-              <Text style={{ fontStyle: 'italic', fontWeight: 'normal' }}>Don't have seller account?</Text>  SellerRegister
+              <Text style={{ fontStyle: 'italic', fontWeight: 'normal' }}>Don't have seller account?</Text>  Register Seller
             </Text>            
           </KeyboardAvoidingView>
         </View>

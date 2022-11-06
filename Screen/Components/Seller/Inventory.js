@@ -227,7 +227,7 @@ export default class Cart extends React.Component {
 
 
 		return (
-			<View style={{ flex: 1, backgroundColor: '#f6f6f6' }}>
+			<View style={{ flex: 1, backgroundColor: '#9555ed' }}>
 				<View style={{ flexDirection: 'row', backgroundColor: '#fff', marginBottom: 10 }}>
 					<View style={[styles.centerElement, { width: 50, height: 50 }]}>
 						<Icon style={[{ color: "black" }]} size={25} name="search" />
@@ -296,7 +296,7 @@ export default class Cart extends React.Component {
 				
 
 				<View style={{ flexDirection: 'row', justifyContent: 'flex-end', height: 32, paddingRight: 20, alignItems: 'center' }}>
-					<TouchableOpacity style={[styles.centerElement, { backgroundColor: '#2B2D2F', width: 40, height: 40, marginBottom: 40, borderRadius: 20 }]} onPress={() => this.addMedicine()}>
+					<TouchableOpacity style={[styles.centerElement, { backgroundColor: '#9555ed', width: 40, height: 40, marginBottom: 40, borderRadius: 20 }]} onPress={() => this.addMedicine()}>
 					<Icon name="add" color='white' size={25} />
 					</TouchableOpacity>
 				</View>

@@ -62,10 +62,6 @@ const RegisterScreen = props => {
           backgroundColor: '#307ecc',
           justifyContent: 'center',
         }}>
-        <Image
-          source={require('../Image/success.png')}
-          style={{ height: 150, resizeMode: 'contain', alignSelf: 'center' }}
-        />
         <Text style={styles.successTextStyle}>Registration Successful.</Text>
         <TouchableOpacity
           style={styles.buttonStyle}
@@ -82,26 +78,17 @@ const RegisterScreen = props => {
       <Loader loading={loading} />
       <ScrollView keyboardShouldPersistTaps="handled">
         <View style={{ alignItems: 'center' }}>
-          <Image
-            source={require('../Image/b.png')}
-            style={{
-              width: '100%',
-              height: 80,
-              resizeMode: 'contain',
-              marginTop: 60,
-              marginBottom: 40,
-            }}
-          />
+        <Text style={{ fontSize: 40, color: '#2e2042', textAlign: 'center', fontWeight: 'bold' }}>Seller Registration</Text>
         </View>
 
 
         <KeyboardAvoidingView enabled>
           <View style={styles.SectionStyle}>
+          <Text style={{ fontSize: 20, fontWeight: 'bold' }}>User Name</Text>
             <TextInput
               style={styles.inputStyle}
               onChangeText={UserName => setUserName(UserName)}
               underlineColorAndroid="#FFFFFF"
-              placeholder="Enter Name"
               placeholderTextColor="#08070D"
               autoCapitalize="sentences"
               returnKeyType="next"
@@ -113,11 +100,11 @@ const RegisterScreen = props => {
           </View>
 
           <View style={styles.SectionStyle}>
+          <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Phone Number</Text>
             <TextInput
               style={styles.inputStyle}
               onChangeText={Phone => setUserPhone(Phone)}
               underlineColorAndroid="#FFFFFF"
-              placeholder="Enter Phone"
               placeholderTextColor="#08070D"
               autoCapitalize="sentences"
               returnKeyType="next"
@@ -130,11 +117,11 @@ const RegisterScreen = props => {
 
 
           <View style={styles.SectionStyle}>
+          <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Email Address</Text>
             <TextInput
               style={styles.inputStyle}
               onChangeText={UserEmail => setUserEmail(UserEmail)}
               underlineColorAndroid="#F6F6F7"
-              placeholder="Enter Email"
               placeholderTextColor="#08070D"
               keyboardType="email-address"
               // ref={ref => {
@@ -147,11 +134,11 @@ const RegisterScreen = props => {
           </View>
 
           <View style={styles.SectionStyle}>
+          <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Shop Name</Text>
             <TextInput
               style={styles.inputStyle}
               onChangeText={UserEmail => setUserEmail(UserEmail)}
               underlineColorAndroid="#F6F6F7"
-              placeholder="Enter Shop Name"
               placeholderTextColor="#08070D"
               keyboardType="email-address"
               // ref={ref => {
@@ -164,11 +151,11 @@ const RegisterScreen = props => {
           </View>
 
           <View style={styles.SectionStyle}>
+          <Text style={{ fontSize: 20, fontWeight: 'bold' }}>User Passowrd</Text>
             <TextInput
               style={styles.inputStyle}
               onChangeText={Password => setUserPassword(Password)}
               underlineColorAndroid="#F6F6F7"
-              placeholder="Password"
               placeholderTextColor="#08070D"
               keyboardType="email-address"
               // ref={ref => {
@@ -180,11 +167,11 @@ const RegisterScreen = props => {
             />
           </View>
           <View style={styles.SectionStyle}>
+          <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Confirm User Password</Text>
             <TextInput
               style={styles.inputStyle}
               onChangeText={ConfirmPasswword => setUserPassword(ConfirmPasswword)}
               underlineColorAndroid="#F6F6F7"
-              placeholder="Confirm Passowrd"
               placeholderTextColor="#08070D"
               keyboardType="email-address"
               // ref={ref => {
@@ -221,7 +208,6 @@ export default RegisterScreen;
 
 const styles = StyleSheet.create({
   SectionStyle: {
-    flexDirection: 'row',
     height: 40,
     marginTop: 10,
     marginLeft: 35,
@@ -240,11 +226,12 @@ const styles = StyleSheet.create({
     marginLeft: '40%',
     marginTop: 20,
     marginBottom: 20,
+    fontSize: 20,
   },
   buttonTextStyle: {
     color: '#FFFFFF',
     paddingVertical: 10,
-    fontSize: 16,
+    fontSize: 20,
   },
   registerTextStyle: {
     color: '#08070D',
@@ -255,24 +242,22 @@ const styles = StyleSheet.create({
   },
   inputStyle: {
     flex: 1,
-    paddingLeft: 15,
-    paddingRight: 15,
-    borderWidth: 1,
-    maxWidth: '90%',
-    marginLeft: '5%',
-    borderRadius: 10,
+    maxWidth: '30%',
+    height:'100%',
+    marginBottom: '1%',
     backgroundColor: 'white',
     borderColor: 'grey',
+    fontSize: 20,
   },
   errorTextStyle: {
     color: 'red',
     textAlign: 'center',
-    fontSize: 14,
+    fontSize: 20,
   },
   successTextStyle: {
     color: 'white',
     textAlign: 'center',
-    fontSize: 18,
+    fontSize: 20,
     padding: 30,
   },
 });

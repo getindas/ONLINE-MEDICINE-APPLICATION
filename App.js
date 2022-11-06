@@ -10,13 +10,13 @@ import SplashScreen from './Screen/SplashScreen';
 import LoginScreen from './Screen/LoginScreen';
 
 import RegisterScreen from './Screen/BuyerRegistration';
-import BottomNav from './Screen/Components/BuyerScreens/BuyerNav';
+import BottomNav from './Screen/Components/Buyer/BuyerNav';
 import SellerNav from './Screen/Components/Seller/SellerNav';
 import SellerRegistration from './Screen/SellerRegistration'
 import AddMedi from './Screen/Components/Seller/AddMedi'
 import EditMedi from './Screen/Components/Seller/EditMedi'
-import EditProfile from './Screen/Components/BuyerScreens/EditProfile'
-import PlaceOrder from './Screen/Components/BuyerScreens/PlaceOrder'
+import EditProfile from './Screen/Components/Buyer/EditProfile'
+import PlaceOrder from './Screen/Components/Buyer/PlaceOrder'
 import AdminProfile from './Screen/Components/Seller/AdminProfile'
 import AddAdmin from './Screen/Components/Seller/AddAdmin'
 

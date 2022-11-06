@@ -80,24 +80,24 @@ export default class EditMedi extends Component {
                 <View>
                 <Text style={{fontSize:30,marginTop:20,fontWeight:'bold',textDecorationLine: 'underline',marginBottom:25}}>Edit {name}</Text>
                 </View>
+                    <Text style={{fontSize: 20, fontWeight: 'bold'}}>Medicine Name </Text>
                     <TextInput style={styles.inputBox}
                         onChangeText={(medicineName) => this.setState({ medicineName: medicineName })}
                         underlineColorAndroid='rgba(0,0,0,0)'
-                        placeholder="Medicine Name"
                         placeholderTextColor="#002f6c"
                         selectionColor="#fff"
                         keyboardType="email-address"
                         onSubmitEditing={() => this.password.focus()} />
 
+                    <Text style={{fontSize: 20, fontWeight: 'bold'}}>Medicine Strength (mg, ml) </Text> 
                     <TextInput style={styles.inputBox}
                         onChangeText={(strength) => this.setState({ strength: strength })}
                         underlineColorAndroid='rgba(0,0,0,0)'
-                        placeholder="Strength"
-
                         placeholderTextColor="#002f6c"
                         ref={(input) => this.password = input}
                     />
                     <View style={styles.inputBox}>
+                    <Text style={{fontSize: 20, fontWeight: 'bold'}}>Select Strength Type</Text> 
                         <Picker
                             selectedValue={this.state.unit}
                             style={{ height: 50, width: 280, color: '#002f6c' }}
@@ -107,28 +107,24 @@ export default class EditMedi extends Component {
                             <Picker.Item label="ml" value="ml" />
                         </Picker>
                     </View>
-
+                    <Text style={{fontSize: 20, fontWeight: 'bold'}}>Generic Name</Text> 
                     <TextInput style={styles.inputBox}
                         onChangeText={(genericName) => this.setState({ genericName: genericName })}
                         underlineColorAndroid='rgba(0,0,0,0)'
-                        placeholder="Generic Name"
-
                         placeholderTextColor="#002f6c"
                         ref={(input) => this.password = input}
                     />
+                    <Text style={{fontSize: 20, fontWeight: 'bold'}}>Manufacturer Name</Text> 
                     <TextInput style={styles.inputBox}
                         onChangeText={(manufacturer) => this.setState({ manufacturer: manufacturer })}
                         underlineColorAndroid='rgba(0,0,0,0)'
-                        placeholder="Manufacturer"
-
                         placeholderTextColor="#002f6c"
                         ref={(input) => this.password = input}
                     />
+                    <Text style={{fontSize: 20, fontWeight: 'bold'}}>Price</Text> 
                     <TextInput style={styles.inputBox}
                         onChangeText={(price) => this.setState({ price: price })}
                         underlineColorAndroid='rgba(0,0,0,0)'
-                        placeholder="Price"
-
                         placeholderTextColor="#002f6c"
                         ref={(input) => this.password = input}
                     />
@@ -152,7 +148,7 @@ export default class EditMedi extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        alignItems: 'center',
+        alignItems: 'left',
         backgroundColor:'#9555ed',
         height:'100%'
     },
@@ -164,9 +160,8 @@ const styles = StyleSheet.create({
     inputBox: {
         width: 300,
         backgroundColor: '#eeeeee',
-        borderRadius: 25,
         paddingHorizontal: 16,
-        fontSize: 16,
+        fontSize: 26,
         color: '#002f6c',
         marginVertical: 10
     },

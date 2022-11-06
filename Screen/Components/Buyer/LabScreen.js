@@ -12,24 +12,24 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import Dialog from "react-native-dialog";
 
 
-var text = ""; //Dialogue Title setter
-global.AT='';
+//var text = ""; //Dialogue Title setter
 
-export default class ProfileScreen extends Component {
+var id='';
+export default class LabScreen extends Component {
 
   state = {
-    dialogVisible: false,
-    Email: "test@gmail.com",
-    Phone: "9000000001",
-    Password: "password"
+    Email:"swapnil@gmail.com",
+    Phone:"1234567890",
+    Password:"password",
+    text:''
   };
 
   signout = () => {
 
-    fetch("http://localhost:4000/admin/logout", {
+    fetch("http://localhost:4000/users/logout", {
       method: 'POST',
       headers: {
-          'Authorization':'Bearer '+global.adminToken,
+          'Authorization':'Bearer '+global.token,
           'Accept': 'application/json',
           'Content-Type': 'application/json'
       },
@@ -38,13 +38,10 @@ export default class ProfileScreen extends Component {
 
       .then((response) => response.json())
       .then((responseJson) => {
-          
+          console.log(responseJson)
         
           if (responseJson.status == 'success') {
             this.props.navigation.navigate('LoginScreen');
-              //this.setState({ successText: "Admi successfull" })
-             // console.log("Success")
-
           }
       })
 
@@ -54,10 +51,10 @@ export default class ProfileScreen extends Component {
 
   signoutAll = () => {
 
-    fetch("http://localhost:4000/admin/logoutAll", {
+    fetch("http://localhost:4000/users/logoutAll", {
       method: 'POST',
       headers: {
-          'Authorization':'Bearer '+global.adminToken,
+          'Authorization':'Bearer '+global.token,
           'Accept': 'application/json',
           'Content-Type': 'application/json'
       },
@@ -67,29 +64,16 @@ export default class ProfileScreen extends Component {
       .then((response) => response.json())
       .then((responseJson) => {
           
-        
           if (responseJson.status == 'success') {
             this.props.navigation.navigate('LoginScreen');
-             
-
           }
       })
 
       .catch();
   }
 
-
-
- 
-
   render() {
-    const mail = this.props.navigation.getParam('email', 'Email retriving error')
-    const name = this.props.navigation.getParam('name', 'Name retriving error')
-    //console.log("GT:"+global.adminToken)
-
     return (
-
-
       <View style={styles.container}>
         <View style={styles.header}>
           <View style={styles.headerContent}>
@@ -99,47 +83,12 @@ export default class ProfileScreen extends Component {
         </View>
 
         <View style={styles.body}>
-
           <View style={styles.detailBox}>
             <View style={styles.box1}>
-              <Text style={{ fontSize: 20, color: 'white' }}>Email</Text>
-              <Text style={{ fontSize: 20, color: '#BEBEBE' }}>{mail}</Text>
+              <Text style={{ fontSize: 40, color: 'red', textAlign: 'center' }}>Lab Appointment page is Under Construction</Text>
             </View>
             
           </View>
-
-
-          <View style={styles.detailBox}>
-            <View style={styles.box1}>
-              <Text style={{ fontSize: 20, color: 'white' }}>Password</Text>
-              <Text style={{ fontSize: 20, color: '#BEBEBE' }}>{this.state.Password}</Text>
-            </View>
-           
-          </View>
-
-          
-            <View style={{flexDirection: 'row',marginTop: "15%"}}>
-              <TouchableOpacity
-                style={styles.buttonStyle}
-                activeOpacity={0.5}
-                onPress={this.signout}
-              >
-
-                <Text style={styles.buttonTextStyle}>Sign Out</Text>
-              </TouchableOpacity>
-            </View>
-
-
-            <View style={{alignItems:'center',marginTop:24,backgroundColor:'#2B2D2F',height:40,borderRadius:50}}>
-            <Text onPress={() => this.props.navigation.navigate('AddAdmin')} style={{ marginTop:5,marginLeft:20,color:'white', fontWeight: 'bold',fontSize:20 }}>Create new ADMIN</Text>
-            </View>
-        
-              
-
-
-         
-
-
         </View>
       </View>
     );
@@ -153,15 +102,7 @@ const styles = StyleSheet.create({
     flex: 1,
 
   },
-  registerTextStyle: {
-    color: '#08070D',
-    textAlign: 'center',
-    fontWeight: 'bold',
-    fontSize: 14,
-    marginLeft: 20,
-    marginTop: 50
-  },
-
+  
   box2: {
     flex: 1,
     alignItems: 'flex-end'
@@ -174,7 +115,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#DCDCDC",
   },
   headerContent: {
-    padding: 30,
+    padding: 10,
     alignItems: 'center',
   },
   avatar: {
@@ -200,8 +141,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 10,
     marginLeft: '40%',
-    marginTop: 0,
-
+    marginTop: 20,
+    marginBottom: 20,
   },
   buttonTextStyle: {
     color: '#FFFFFF',
@@ -220,7 +161,7 @@ const styles = StyleSheet.create({
   },
   item: {
     flexDirection: 'row',
-    marginTop: "30%",
+    marginTop: 5,
 
   },
   infoContent: {

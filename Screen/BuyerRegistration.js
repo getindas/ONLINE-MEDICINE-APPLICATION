@@ -93,10 +93,6 @@ const RegisterScreen = props => {
           backgroundColor: '#307ecc',
           justifyContent: 'center',
         }}>
-        <Image
-          source={require('../Image/success.png')}
-          style={{ height: 150, resizeMode: 'contain', alignSelf: 'center' }}
-        />
         <Text style={styles.successTextStyle}>Registration Successful.</Text>
         <TouchableOpacity
           style={styles.buttonStyle}
@@ -113,26 +109,17 @@ const RegisterScreen = props => {
       <Loader loading={loading} />
       <ScrollView keyboardShouldPersistTaps="handled">
         <View style={{ alignItems: 'center' }}>
-          <Image
-            source={require('../Image/a.png')}
-            style={{
-              width: '100%',
-              height: 80,
-              resizeMode: 'contain',
-              marginTop: 40,
-              marginBottom: 40,
-            }}
-          />
+        <Text style={{ fontSize: 40, color: '#2e2042', textAlign: 'center', fontWeight: 'bold' }}>User Registration</Text>
         </View>
 
 
         <KeyboardAvoidingView enabled>
-          <View style={styles.SectionStyle}>
+          <View style={styles.SectionStyle}> 
+          <Text style={{ fontSize: 20, fontWeight: 'bold' }}>User Name</Text>
             <TextInput
               style={styles.inputStyle}
               onChangeText={UserName => setUserName(UserName)}
               underlineColorAndroid="#FFFFFF"
-              placeholder="Enter Name"
               placeholderTextColor="#08070D"
               autoCapitalize="sentences"
               returnKeyType="next"
@@ -144,11 +131,11 @@ const RegisterScreen = props => {
           </View>
 
           <View style={styles.SectionStyle}>
+          <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Phone Number</Text>
             <TextInput
               style={styles.inputStyle}
               onChangeText={Phone => setUserPhone(Phone)}
               underlineColorAndroid="#FFFFFF"
-              placeholder="Enter Phone"
               placeholderTextColor="#08070D"
               autoCapitalize="sentences"
               returnKeyType="next"
@@ -161,11 +148,11 @@ const RegisterScreen = props => {
 
 
           <View style={styles.SectionStyle}>
+          <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Email Address</Text>
             <TextInput
               style={styles.inputStyle}
               onChangeText={UserEmail => setUserEmail(UserEmail)}
               underlineColorAndroid="#F6F6F7"
-              placeholder="Enter Email"
               placeholderTextColor="#08070D"
               keyboardType="email-address"
               returnKeyType="next"
@@ -174,11 +161,11 @@ const RegisterScreen = props => {
             />
           </View>
           <View style={styles.SectionStyle}>
+          <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Home Address</Text>
             <TextInput
               style={styles.inputStyle}
               onChangeText={UserAddress => setUserAddress(UserAddress)}
               underlineColorAndroid="#F6F6F7"
-              placeholder="Enter Address"
               placeholderTextColor="#08070D"
               keyboardType="email-address"
               returnKeyType="next"
@@ -187,11 +174,11 @@ const RegisterScreen = props => {
             />
           </View>
           <View style={styles.SectionStyle}>
+          <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Passowrd</Text>
           <TextInput
           style={styles.inputStyle}
           onChangeText={Passwword => setUserPassword(Passwword)}
           underlineColorAndroid="#F6F6F7"
-          placeholder="Passowrd"
           placeholderTextColor="#08070D"
           keyboardType="default"
           secureTextEntry={true}
@@ -200,11 +187,11 @@ const RegisterScreen = props => {
         />
           </View>
           <View style={styles.SectionStyle}>
+          <Text style={{ fontSize: 20, fontWeight: 'bold' }}>Confirm Passowrd</Text>
             <TextInput
               style={styles.inputStyle}
               onChangeText={ConfirmRePasswword => setUserRePassword(ConfirmRePasswword)}
               underlineColorAndroid="#F6F6F7"
-              placeholder="Confirm Passowrd"
               placeholderTextColor="#08070D"
               keyboardType="default"
               secureTextEntry={true}
@@ -239,7 +226,6 @@ export default RegisterScreen;
 
 const styles = StyleSheet.create({
   SectionStyle: {
-    flexDirection: 'row',
     height: 40,
     marginTop: 10,
     marginLeft: 35,
@@ -250,7 +236,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#2B2D2F',
     borderWidth: 0,
     color: '#FFFFFF',
-    height: 40,
     width: '25%',
     alignItems: 'center',
     justifyContent: 'center',
@@ -262,25 +247,23 @@ const styles = StyleSheet.create({
   buttonTextStyle: {
     color: '#FFFFFF',
     paddingVertical: 10,
-    fontSize: 16,
+    fontSize: 20,
   },
   registerTextStyle: {
     color: '#08070D',
     textAlign: 'center',
     fontWeight: 'bold',
-    fontSize: 14,
+    fontSize: 20,
     marginLeft: 20
   },
   inputStyle: {
     flex: 1,
-    paddingLeft: 15,
-    paddingRight: 15,
-    borderWidth: 1,
-    maxWidth: '90%',
-    marginLeft: '5%',
-    borderRadius: 10,
+    maxWidth: '30%',
+    height:'100%',
+    marginBottom: '1%',
     backgroundColor: 'white',
     borderColor: 'grey',
+    fontSize: 20,
   },
   errorTextStyle: {
     color: 'red',

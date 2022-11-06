@@ -12,24 +12,24 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import Dialog from "react-native-dialog";
 
 
-var text = ""; //Dialogue Title setter
-global.AT='';
+//var text = ""; //Dialogue Title setter
 
+var id='';
 export default class ProfileScreen extends Component {
 
   state = {
-    dialogVisible: false,
-    Email: "test@gmail.com",
-    Phone: "9000000001",
-    Password: "password"
+    Email:"swapnil@gmail.com",
+    Phone:"1234567890",
+    Password:"password",
+    text:''
   };
 
   signout = () => {
 
-    fetch("http://localhost:4000/admin/logout", {
+    fetch("http://localhost:4000/users/logout", {
       method: 'POST',
       headers: {
-          'Authorization':'Bearer '+global.adminToken,
+          'Authorization':'Bearer '+global.token,
           'Accept': 'application/json',
           'Content-Type': 'application/json'
       },
@@ -38,12 +38,12 @@ export default class ProfileScreen extends Component {
 
       .then((response) => response.json())
       .then((responseJson) => {
-          
+          console.log(responseJson)
         
           if (responseJson.status == 'success') {
             this.props.navigation.navigate('LoginScreen');
               //this.setState({ successText: "Admi successfull" })
-             // console.log("Success")
+             //console.log("Success")
 
           }
       })
@@ -54,10 +54,10 @@ export default class ProfileScreen extends Component {
 
   signoutAll = () => {
 
-    fetch("http://localhost:4000/admin/logoutAll", {
+    fetch("http://localhost:4000/users/logoutAll", {
       method: 'POST',
       headers: {
-          'Authorization':'Bearer '+global.adminToken,
+          'Authorization':'Bearer '+global.token,
           'Accept': 'application/json',
           'Content-Type': 'application/json'
       },
@@ -80,12 +80,26 @@ export default class ProfileScreen extends Component {
 
 
 
- 
+  EditScreen = (mail) => {
+    this.props.navigation.navigate('EditProfile',{editText:mail,id:id});
+
+  };
+
 
   render() {
-    const mail = this.props.navigation.getParam('email', 'Email retriving error')
-    const name = this.props.navigation.getParam('name', 'Name retriving error')
-    //console.log("GT:"+global.adminToken)
+    const mail =  this.props.navigation.getParam('email', 'Email retriving error')
+    const phone =  this.props.navigation.getParam('phone', 'Phone retriving error')
+    const name =  this.props.navigation.getParam('name', 'Name retriving error')
+    const add =  this.props.navigation.getParam('address', 'Address retriving error')
+    const username =  this.props.navigation.getParam('text', 'Test retriving error')
+   id =  this.props.navigation.getParam('ID', 'Name retriving error')
+    
+    // const mail =  'swapnil@gmail.com'
+    // const phone =  '1234567891'
+    // const name =  'swapnil'
+    // const add =  'swapnil@gmail.com'
+    // const username =  'swapnil'
+    // id =  '635d60e5c2db7936701492f8'
 
     return (
 
@@ -95,6 +109,9 @@ export default class ProfileScreen extends Component {
           <View style={styles.headerContent}>
             <Image style={styles.avatar}
               source={{ uri: 'https://bootdey.com/img/Content/avatar/avatar7.png' }} />
+
+            <Text style={styles.name}>{name}</Text>
+            <Text style={styles.userInfo}>{mail}</Text>
           </View>
         </View>
 
@@ -102,42 +119,57 @@ export default class ProfileScreen extends Component {
 
           <View style={styles.detailBox}>
             <View style={styles.box1}>
-              <Text style={{ fontSize: 20, color: 'white' }}>Email</Text>
-              <Text style={{ fontSize: 20, color: '#BEBEBE' }}>{mail}</Text>
+              <Text style={{ fontSize: 20, color: 'white' }}>Username</Text>
+              <Text style={{ fontSize: 20, color: '#BEBEBE' }}>{name}</Text>
+            </View>
+            <View style={styles.box2}>
+              <Icon name="create" size={25} style={{ marginTop: 5 }} onPress={() => { this.EditScreen('Username') }} />
+            </View>
+
+          </View>
+
+          <View style={styles.detailBox}>
+            <View style={styles.box1}>
+              <Text style={{ fontSize: 20, color: 'white' }}>Address</Text>
+              <Text style={{ fontSize: 20, color: '#BEBEBE' }}>{add}</Text>
             </View>
             
           </View>
 
+          <View style={styles.detailBox}>
+            <View style={styles.box1}>
+              <Text style={{ fontSize: 20, color: 'white' }}>Phone</Text>
+              <Text style={{ fontSize: 20, color: '#BEBEBE' }}>{phone}</Text>
+            </View>
+            <View style={styles.box2}>
+              <Icon name="create" size={25} style={{ marginTop: 5 }} onPress={() => { this.EditScreen('Phone') }} />
+            </View>
+          </View>
 
           <View style={styles.detailBox}>
             <View style={styles.box1}>
               <Text style={{ fontSize: 20, color: 'white' }}>Password</Text>
               <Text style={{ fontSize: 20, color: '#BEBEBE' }}>{this.state.Password}</Text>
             </View>
-           
+            <View style={styles.box2}>
+              <Icon name="create" size={25} style={{ marginTop: 5 }} onPress={() => { this.EditScreen('Password') }} />
+            </View>
           </View>
 
-          
-            <View style={{flexDirection: 'row',marginTop: "15%"}}>
-              <TouchableOpacity
-                style={styles.buttonStyle}
-                activeOpacity={0.5}
-                onPress={this.signout}
-              >
+          <View style={styles.item}>
 
-                <Text style={styles.buttonTextStyle}>Sign Out</Text>
-              </TouchableOpacity>
-            </View>
+            <TouchableOpacity
+              style={styles.buttonStyle}
+              activeOpacity={0.5}
+              onPress={this.signout}
+            >
 
-
-            <View style={{alignItems:'center',marginTop:24,backgroundColor:'#2B2D2F',height:40,borderRadius:50}}>
-            <Text onPress={() => this.props.navigation.navigate('AddAdmin')} style={{ marginTop:5,marginLeft:20,color:'white', fontWeight: 'bold',fontSize:20 }}>Create new ADMIN</Text>
-            </View>
-        
-              
+              <Text style={styles.buttonTextStyle}>Sign Out</Text>
+            </TouchableOpacity>
 
 
-         
+          </View>
+
 
 
         </View>
@@ -153,15 +185,7 @@ const styles = StyleSheet.create({
     flex: 1,
 
   },
-  registerTextStyle: {
-    color: '#08070D',
-    textAlign: 'center',
-    fontWeight: 'bold',
-    fontSize: 14,
-    marginLeft: 20,
-    marginTop: 50
-  },
-
+  
   box2: {
     flex: 1,
     alignItems: 'flex-end'
@@ -174,7 +198,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#DCDCDC",
   },
   headerContent: {
-    padding: 30,
+    padding: 10,
     alignItems: 'center',
   },
   avatar: {
@@ -200,8 +224,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 10,
     marginLeft: '40%',
-    marginTop: 0,
-
+    marginTop: 20,
+    marginBottom: 20,
   },
   buttonTextStyle: {
     color: '#FFFFFF',
@@ -220,7 +244,7 @@ const styles = StyleSheet.create({
   },
   item: {
     flexDirection: 'row',
-    marginTop: "30%",
+    marginTop: 5,
 
   },
   infoContent: {
