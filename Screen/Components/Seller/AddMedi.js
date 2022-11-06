@@ -77,6 +77,7 @@ export default class EditMedi extends Component {
                     <View>
                         <Text style={{ fontSize: 30,marginTop:20, fontWeight: 'bold', textDecorationLine: 'underline', marginBottom: 25 }}>Add Medicine to the List</Text>
                     </View>
+                    <Text style={{fontWeight: 'bold'}}>Medicine Name</Text> 
                     <TextInput style={styles.inputBox}
                         onChangeText={(medicineName) => this.setState({ medicineName: medicineName })}
                         underlineColorAndroid='rgba(0,0,0,0)'
@@ -86,6 +87,7 @@ export default class EditMedi extends Component {
                         keyboardType="email-address"
                         onSubmitEditing={() => this.password.focus()} />
 
+                    <Text style={{fontWeight: 'bold'}}>Medicine Strength (mg, ml)</Text> 
                     <TextInput style={styles.inputBox}
                         onChangeText={(strength) => this.setState({ strength: strength })}
                         underlineColorAndroid='rgba(0,0,0,0)'
@@ -96,6 +98,7 @@ export default class EditMedi extends Component {
                     />
 
                     <View style={styles.inputBox}>
+                    <Text style={{fontWeight: 'bold'}}>Select Strength Type</Text>
                         <Picker
                             selectedValue={this.state.unit}
                             style={{ height: 50, width: 280, color: '#002f6c' }}
@@ -109,7 +112,7 @@ export default class EditMedi extends Component {
                     <TextInput style={styles.inputBox}
                         onChangeText={(genericName) => this.setState({ genericName: genericName })}
                         underlineColorAndroid='rgba(0,0,0,0)'
-                        placeholder="Generic Name"
+                        placeholder="Composition Name"
 
                         placeholderTextColor="#002f6c"
                         ref={(input) => this.password = input}
@@ -150,8 +153,8 @@ export default class EditMedi extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        alignItems: 'center',
-        backgroundColor:'#B2BEB5',
+        alignItems: 'left',
+        backgroundColor:'#9555ed',
         height:'100%'
     },
     successTextStyle: {
@@ -169,7 +172,7 @@ const styles = StyleSheet.create({
         marginVertical: 10
     },
     button: {
-        width: "40%",
+        width: "10%",
         backgroundColor: '#2B2D2F',
         borderRadius: 25,
         marginVertical: 10,

@@ -96,9 +96,9 @@ export default class Cart extends React.Component {
 	}
 
 	test = (itemName, ID) => {
-
+		console.log("SND:::" + itemName);
 		this.props.navigation.navigate('EditMedi', { name: itemName, id: ID });
-		//console.log(itemName);
+		console.log(itemName);
 
 	}
 
@@ -258,13 +258,13 @@ export default class Cart extends React.Component {
 										</TouchableOpacity>
 										<View style={{ flexGrow: 1, flexShrink: 1, alignSelf: 'center' }}>
 
-											<TouchableOpacity onPress={() => alert("Name: " + item.medicineName + "\n" + item.strength + " " + item.unit + "\n" + "Generic: " + item.genericName + "\n" + "Company: " + item.manufacturer + "\n" + "Price: " + item.price + "tk.")}>
+											<TouchableOpacity onPress={() => alert("Name: " + item.medicineName + "\n" + item.strength + " " + item.unit + "\n" + "Generic: " + item.genericName + "\n" + "Company: " + item.manufacturer + "\n" + "Price: " + item.price + "rs.")}>
 												<Text numberOfLines={1} style={{ fontSize: 20 }}>{item.medicineName}</Text>
 												<Text numberOfLines={1} style={{ color: '#8f8f8f' }}>{item.strength} {item.unit}</Text>
 
 												<Text numberOfLines={1} style={{ color: '#8f8f8f' }}>Generic Name: {item.genericName}</Text>
 												<Text numberOfLines={1} style={{ color: '#8f8f8f' }}>Manufacturer: {item.manufacturer}</Text>
-												<Text numberOfLines={1} style={{ color: '#8f8f8f' }}>Price: {item.price} tk.</Text>
+												<Text numberOfLines={1} style={{ color: '#8f8f8f' }}>Price: {item.price} rs.</Text>
 
 											</TouchableOpacity>
 

@@ -35,7 +35,7 @@ export default class Delivered extends React.Component {
 	getData() {
 
 
-		fetch('http://localhost:4000/admin/orders/Delivered',
+		fetch('http://localhost:4000/admin/orders/delivered',
 			{
 				method: 'GET',
 				headers: {
@@ -128,7 +128,7 @@ export default class Delivered extends React.Component {
 												<Text numberOfLines={1} style={{ fontSize: 20 }}>{item.customerName} </Text>
 												<Text style={{ fontSize: 15,color: '#8f8f8f'}}>Date: {item.dateTime}</Text> 
 
-												<Text numberOfLines={1} style={{ color: '#8f8f8f' }}>Total: {item.subTotal} tk.</Text>
+												<Text numberOfLines={1} style={{ color: '#8f8f8f' }}>Total: {item.subTotal} rs.</Text>
 
 
 											</TouchableOpacity>

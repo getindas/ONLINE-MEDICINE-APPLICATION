@@ -171,7 +171,7 @@ export default class Accepted extends React.Component {
 											<Text style={{fontSize:15, color: '#8f8f8f'}}>{item.dateTime}</Text> 
 										
 
-											<Text numberOfLines={1} style={{ color: '#8f8f8f' }}>Total: {item.subTotal} tk.</Text>
+											<Text numberOfLines={1} style={{ color: '#8f8f8f' }}>Total: {item.subTotal} rs.</Text>
 											
 
 											</TouchableOpacity>

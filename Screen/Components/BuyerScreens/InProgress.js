@@ -43,7 +43,8 @@ export default class Pending extends React.Component {
 
 	getData() {
 
-
+console.log("admin token::" + global.adminToeken);
+console.log("Token::" + global.token);
 		fetch('http://localhost:4000/orders/pending',
 			{
 				method: 'GET',
@@ -139,7 +140,7 @@ export default class Pending extends React.Component {
 
 											<TouchableOpacity onPress={() => this.orderDetails(item.orderNo)}>
 												
-												<Text numberOfLines={1} style={{ color: '#8f8f8f',fontSize:20 }}>Total: {item.subTotal} tk.</Text>
+												<Text numberOfLines={1} style={{ color: '#8f8f8f',fontSize:20 }}>Total: {item.subTotal} rs.</Text>
 
 
 											</TouchableOpacity>

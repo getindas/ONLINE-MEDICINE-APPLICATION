@@ -83,6 +83,7 @@ const Auth = createStackNavigator({
 
   SellerRegistration: {
     screen: SellerRegistration,
+    title: 'SellerRegister',
     navigationOptions: {
       headerShown: false,
     },

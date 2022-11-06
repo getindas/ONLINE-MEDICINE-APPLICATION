@@ -274,11 +274,11 @@ export default class Cart extends React.Component {
 
 
                                             <View style={{ flexGrow: 1, flexShrink: 1, alignSelf: 'center' }}>
-                                                <TouchableOpacity onPress={() => alert("Name: " + item.medicineName + "\n" + item.strength + " " + item.unit + "\n" + "Generic: " + item.genericName + "\n" + "Company: " + item.manufacturer + "\n" + "Price: " + item.price + "tk.")}>
+                                                <TouchableOpacity onPress={() => alert("Name: " + item.medicineName + "\n" + item.strength + " " + item.unit + "\n" + "Generic: " + item.genericName + "\n" + "Company: " + item.manufacturer + "\n" + "Price: " + item.price + "rs.")}>
                                                     <Text numberOfLines={1} style={{ fontSize: 20 }}>{item.medicineName}</Text>
                                                     <Text numberOfLines={1} style={{ color: '#8f8f8f', fontSize: 15 }}>{item.strength ? item.strength + " " + item.unit : ''}</Text>
                                                     <Text numberOfLines={1} style={{ fontSize: 15, color: '#8f8f8f' }}>manufacturer: {item.manufacturer}</Text>
-                                                    <Text numberOfLines={1} style={{ color: '#333333', marginBottom: 2, fontSize: 18 }}>Price: {global.var * item.price} tk.</Text>
+                                                    <Text numberOfLines={1} style={{ color: '#333333', marginBottom: 2, fontSize: 18 }}>Price: {global.var * item.price} rs.</Text>
 
                                                 </TouchableOpacity>
 
@@ -305,7 +305,7 @@ export default class Cart extends React.Component {
                                 <Text style={{ paddingTop: 20, color: 'white' }}>Select All</Text>
                                 <View style={{ flexDirection: 'row', paddingRight: 20, marginTop: -8, alignItems: 'center' }}>
                                     <Text style={{ color: 'white' }}>SubTotal: </Text>
-                                    <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#0faf9a' }}>{this.subtotalPrice().toFixed(2)} tk.</Text>
+                                    <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#0faf9a' }}>{this.subtotalPrice().toFixed(2)} rs.</Text>
                                 </View>
                             </View>
                         </View>

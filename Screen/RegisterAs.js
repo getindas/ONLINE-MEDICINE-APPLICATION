@@ -30,7 +30,7 @@ export default RegisterAs;
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#B2BEB5',
+        backgroundColor: '#9555ed',
         alignItems: 'center',
         justifyContent: 'center',
     },

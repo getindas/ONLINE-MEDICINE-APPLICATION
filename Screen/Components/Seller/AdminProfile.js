@@ -19,9 +19,9 @@ export default class ProfileScreen extends Component {
 
   state = {
     dialogVisible: false,
-    Email: "tanjilh84@gmail.com",
-    Phone: "017********",
-    Password: "********"
+    Email: "test@gmail.com",
+    Phone: "9000000001",
+    Password: "password"
   };
 
   signout = () => {
@@ -118,7 +118,7 @@ export default class ProfileScreen extends Component {
           </View>
 
           
-            <View style={styles.item}>
+            <View style={{flexDirection: 'row',marginTop: "17%"}}>
               <TouchableOpacity
                 style={styles.buttonStyle}
                 activeOpacity={0.5}

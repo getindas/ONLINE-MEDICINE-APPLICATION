@@ -169,7 +169,7 @@ export default class EditMedi extends Component {
 const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
-        backgroundColor:'#B2BEB5',
+        backgroundColor:'#9555ed',
         height:'100%'
     },
     successTextStyle: {

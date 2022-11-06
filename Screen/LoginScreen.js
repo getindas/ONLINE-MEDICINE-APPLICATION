@@ -41,6 +41,7 @@ const LoginScreen = props => {
 
     setLoading(true);
 
+    console.log("Value>>>>" + value);
 
     if (value == 'customer') {
      apifetch();
@@ -73,7 +74,9 @@ const LoginScreen = props => {
     
               console.log("Printing admin token" + global.adminToken)
     
-              props.navigation.navigate('AdminProfile', { email: mail});
+ //             props.navigation.navigate('SellerRegistration', { global: global});
+
+             props.navigation.navigate('AdminProfile', { email: mail});
              // props.navigation.navigate('PlaceOrder', { token:responseJson.message.token});
              
     
@@ -223,6 +226,11 @@ const LoginScreen = props => {
               onPress={() => props.navigation.navigate('BuyerRegistration')}>
               <Text style={{ fontStyle: 'italic', fontWeight: 'normal' }}>Don't have any account?</Text>  Register
             </Text>
+            <Text
+              style={styles.registerTextStyle}
+              onPress={() => props.navigation.navigate('SellerRegistration')}>
+              <Text style={{ fontStyle: 'italic', fontWeight: 'normal' }}>Don't have seller account?</Text>  SellerRegister
+            </Text>            
           </KeyboardAvoidingView>
         </View>
       </ScrollView>
@@ -235,7 +243,7 @@ const styles = StyleSheet.create({
   mainBody: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: '#B2BEB5',
+    backgroundColor: '#9555ed',
   },
   SectionStyle: {
     flexDirection: 'row',

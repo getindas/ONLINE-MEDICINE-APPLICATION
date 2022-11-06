@@ -142,7 +142,7 @@ export default class Pending extends React.Component {
 										<TouchableOpacity onPress={() => this.orderDetails(item.orderNo)}>
 									
 
-											<Text numberOfLines={1} style={{ color: '#8f8f8f',fontSize:20 }}>Total: {item.subTotal} tk.</Text>
+											<Text numberOfLines={1} style={{ color: '#8f8f8f',fontSize:20 }}>Total: {item.subTotal} rs.</Text>
 											
 
 											</TouchableOpacity>

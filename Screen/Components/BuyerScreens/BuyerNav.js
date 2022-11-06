@@ -8,6 +8,8 @@ import Profile from './ProfileScreen'
 import Orders from './OrderScreen'
 import Notifications from './NotificationScreen'
 import InProgress from './InProgress'
+import Lab from './LabScreen'
+import Doctor from './DoctorScreen'
 
 
  
@@ -58,6 +60,32 @@ const TabNavigator = createMaterialBottomTabNavigator(
                 tabBarIcon: ({ tintColor }) => (  
                     <View>  
                         <Icon style={[{color: tintColor}]} size={25} name={'ios-person'}/> 
+                    </View>),  
+                activeColor: 'white',  
+                inactiveColor: 'grey',  
+                barStyle: { backgroundColor: '#2B2D2F' },  
+            }  
+        },
+        Doctor: { screen: Doctor,  
+            navigationOptions:{  
+                tabBarLabel:'DR Appointment',  
+                
+                tabBarIcon: ({ tintColor }) => (  
+                    <View>  
+                        <Icon style={[{color: tintColor}]} size={25} name={'ios-add-circle-sharp'}/> 
+                    </View>),  
+                activeColor: 'white',  
+                inactiveColor: 'grey',  
+                barStyle: { backgroundColor: '#2B2D2F' },  
+            }  
+        },
+        Lab: { screen: Lab,  
+            navigationOptions:{  
+                tabBarLabel:'Lab Appointment',  
+                
+                tabBarIcon: ({ tintColor }) => (  
+                    <View>  
+                        <Icon style={[{color: tintColor}]} size={25} name={'calendar'}/> 
                     </View>),  
                 activeColor: 'white',  
                 inactiveColor: 'grey',  

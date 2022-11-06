@@ -78,7 +78,7 @@ const RegisterScreen = props => {
   }
   return (
 
-    <View style={{ flex: 1, backgroundColor: '#B2BEB5' }}>
+    <View style={{ flex: 1, backgroundColor: '#9555ed' }}>
       <Loader loading={loading} />
       <ScrollView keyboardShouldPersistTaps="handled">
         <View style={{ alignItems: 'center' }}>

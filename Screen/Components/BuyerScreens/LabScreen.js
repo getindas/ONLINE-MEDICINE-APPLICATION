@@ -15,10 +15,10 @@ import Dialog from "react-native-dialog";
 //var text = ""; //Dialogue Title setter
 
 var id='';
-export default class ProfileScreen extends Component {
+export default class LabScreen extends Component {
 
   state = {
-    Email:"test@gmail.com",
+    Email:"swapnil@gmail.com",
     Phone:"1234567890",
     Password:"password",
     text:''
@@ -42,9 +42,6 @@ export default class ProfileScreen extends Component {
         
           if (responseJson.status == 'success') {
             this.props.navigation.navigate('LoginScreen');
-              //this.setState({ successText: "Admi successfull" })
-             //console.log("Success")
-
           }
       })
 
@@ -67,104 +64,31 @@ export default class ProfileScreen extends Component {
       .then((response) => response.json())
       .then((responseJson) => {
           
-        
           if (responseJson.status == 'success') {
             this.props.navigation.navigate('LoginScreen');
-             
-
           }
       })
 
       .catch();
   }
 
-
-
-  EditScreen = (mail) => {
-    this.props.navigation.navigate('EditProfile',{editText:mail,id:id});
-
-  };
-
-
   render() {
-    const mail =  this.props.navigation.getParam('email', 'Email retriving error')
-    const phone =  this.props.navigation.getParam('phone', 'Phone retriving error')
-    const name =  this.props.navigation.getParam('name', 'Name retriving error')
-    const add =  this.props.navigation.getParam('address', 'Address retriving error')
-    const username =  this.props.navigation.getParam('text', 'Test retriving error')
-   id =  this.props.navigation.getParam('ID', 'Name retriving error')
-    
     return (
-
-
       <View style={styles.container}>
         <View style={styles.header}>
           <View style={styles.headerContent}>
             <Image style={styles.avatar}
               source={{ uri: 'https://bootdey.com/img/Content/avatar/avatar7.png' }} />
-
-            <Text style={styles.name}>{name}</Text>
-            <Text style={styles.userInfo}>{mail}</Text>
           </View>
         </View>
 
         <View style={styles.body}>
-
           <View style={styles.detailBox}>
             <View style={styles.box1}>
-              <Text style={{ fontSize: 20, color: 'white' }}>Username</Text>
-              <Text style={{ fontSize: 20, color: '#BEBEBE' }}>{name}</Text>
-            </View>
-            <View style={styles.box2}>
-              <Icon name="create" size={25} style={{ marginTop: 5 }} onPress={() => { this.EditScreen('Username') }} />
-            </View>
-
-          </View>
-
-          <View style={styles.detailBox}>
-            <View style={styles.box1}>
-              <Text style={{ fontSize: 20, color: 'white' }}>Address</Text>
-              <Text style={{ fontSize: 20, color: '#BEBEBE' }}>{add}</Text>
+              <Text style={{ fontSize: 40, color: 'red', textAlign: 'center' }}>Lab Appointment page is Under Construction</Text>
             </View>
             
           </View>
-
-          <View style={styles.detailBox}>
-            <View style={styles.box1}>
-              <Text style={{ fontSize: 20, color: 'white' }}>Phone</Text>
-              <Text style={{ fontSize: 20, color: '#BEBEBE' }}>{phone}</Text>
-            </View>
-            <View style={styles.box2}>
-              <Icon name="create" size={25} style={{ marginTop: 5 }} onPress={() => { this.EditScreen('Phone') }} />
-            </View>
-          </View>
-
-          <View style={styles.detailBox}>
-            <View style={styles.box1}>
-              <Text style={{ fontSize: 20, color: 'white' }}>Password</Text>
-              <Text style={{ fontSize: 20, color: '#BEBEBE' }}>{this.state.Password}</Text>
-            </View>
-            <View style={styles.box2}>
-              <Icon name="create" size={25} style={{ marginTop: 5 }} onPress={() => { this.EditScreen('Password') }} />
-            </View>
-          </View>
-
-          <View style={styles.item}>
-
-            <TouchableOpacity
-              style={styles.buttonStyle}
-              activeOpacity={0.5}
-              onPress={this.signout}
-            >
-
-              <Text style={styles.buttonTextStyle}>Sign Out</Text>
-            </TouchableOpacity>
-
-
-          </View>
-
-
-
         </View>
       </View>
     );
